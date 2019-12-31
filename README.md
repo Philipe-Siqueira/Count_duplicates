@@ -18,25 +18,25 @@ input string. The input string can be assumed to contain only alphabets
 
 
 function duplicateCount(text){
-  /*
+  
   * Pega o Texto muda para letra minuscula e transforma em vetor
   * Get Text then changes to lower case and make it into array
-  */
+  
   const array = text.toLowerCase().split("");
-  /*
+  
   * Varre o vetor comparando se tiver igual incrementa depois retorna um objeto
   * Checks the array against whether it has equal values, then increments and returns an object
-  */
+  
   const count = array.reduce((total, val) => {total[val] = (total[val] || 0)+1; return total}, {} );
-  /*
+  
   * Filtra no count os valores que aparecem mais de uma vez
   * filter values in object and compare if the values appear more than one time
-  */
+  
   const result = Object.values(count).filter((v) => v > 1)
-  /*
+  
   * retona à quantidade
   * returns the amount
-  */
+  
   return result.length
 }
 console.log(duplicateCount("inconstitucionalissimamente"))
